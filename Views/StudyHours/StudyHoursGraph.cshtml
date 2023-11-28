@@ -1,0 +1,70 @@
+﻿@model List<StudyHours>
+
+<div>
+    <h2>Study Hours </h2>
+    <canvas id="studyHoursChart" width="600" height="300"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var studyHoursData = @Html.Raw(Json.Serialize(Model));
+
+            var moduleNames = Array.from(new Set(studyHoursData.map(item => item.module.name)));
+            var weeks = Array.from(new Set(studyHoursData.map(item => item.weekNumber)));
+
+            var datasets = moduleNames.map(function (moduleName) {
+                var data = weeks.map(function (week) {
+                    var hours = studyHoursData
+                        .filter(item => item.module.name === moduleName && item.weekNumber === week)
+                        .reduce((sum, item) => sum + item.hours, 0);
+                    return hours;
+                });
+
+                return {
+                    label: moduleName,
+                    data: data,
+                    backgroundColor: getRandomColor(),
+                    borderWidth: 1
+                };
+            });
+
+            var ctx = document.getElementById('studyHoursChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: weeks.map(String),
+                    datasets: datasets
+                },
+                options: {
+                    scales: {
+                        x: {
+                            display: false,
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Hours Studied',
+                            position: 'left'
+                        }
+                    }
+                }
+            });
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        });
+    </script>
+</div>

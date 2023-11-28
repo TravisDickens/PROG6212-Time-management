@@ -1,0 +1,27 @@
+﻿
+@model TimeManagementPOE.Controllers.ModuleViewModel
+
+@{
+    ViewData["Title"] = "Remaining Study Hours";
+}
+
+<p> @Model.RemainingStudyHours</p>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        // Calculate remaining study hours and format it as needed
+        var remainingStudyHours = @Html.Raw(Model.RemainingStudyHours);
+
+        // Show the SweetAlert automatically
+        swal({
+            title: "Remaining Study Hours",
+            text: "Remaining study hours for @Model.Module.Name: " + remainingStudyHours,
+            icon: "info"
+        });
+    </script>
+}
