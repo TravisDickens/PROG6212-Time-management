@@ -7,9 +7,9 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Add Modules</a>
 </p>
-<table class="table">
+<table class="table" style="border: 2px solid #ddd;">
     <thead>
         <tr>
             <th>
@@ -30,42 +30,37 @@
             <th>
                 @Html.DisplayNameFor(model => model.StudyHoursLeft)
             </th>
-           @* <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Credits)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClassHours)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Semester)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StudyHoursLeft)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>*@
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ModuleId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ModuleId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ModuleId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semester)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudyHoursLeft)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ModuleId" class="btn btn-secondary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ModuleId" class="btn btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ModuleId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

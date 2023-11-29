@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OV4OdeGW6tS9lyOq/kT/vgG5kr1WTIG+wlMSajEVisM=",
+  "Hash": "jbCEYvlFGfBuyi4BCtizgPSaXIvWFihk8jvQ4mM+VAw=",
   "Source": "TimeManagementPOE",
   "BasePath": "_content/TimeManagementPOE",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\css\\Theme.css",
+      "SourceId": "TimeManagementPOE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\",
+      "BasePath": "_content/TimeManagementPOE",
+      "RelativePath": "css/Theme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Theme.css"
     },
     {
       "Identity": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\favicon.ico",
