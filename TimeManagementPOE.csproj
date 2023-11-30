@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\5856.jpg" />
-    <None Remove="Resources\elevated-view-laptop-stationeries-yellow-backdrop.jpg" />
+    <None Remove="wwwroot\Resources\5856.jpg" />
+    <None Remove="wwwroot\Resources\elevated-view-laptop-stationeries-yellow-backdrop.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\elevated-view-laptop-stationeries-yellow-backdrop.jpg" />
+    <Resource Include="wwwroot\Resources\elevated-view-laptop-stationeries-yellow-backdrop.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\5856.jpg" />
+    <Resource Include="wwwroot\Resources\5856.jpg" />
   </ItemGroup>
 
 </Project>

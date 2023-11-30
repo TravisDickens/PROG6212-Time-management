@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jbCEYvlFGfBuyi4BCtizgPSaXIvWFihk8jvQ4mM+VAw=",
+  "Hash": "PuPiIYpkVvXFdzKytGgGvuYs/nmQmBkfnrazVi6kn5Y=",
   "Source": "TimeManagementPOE",
   "BasePath": "_content/TimeManagementPOE",
   "Mode": "Default",
@@ -2174,6 +2174,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\Resources\\5856.jpg",
+      "SourceId": "TimeManagementPOE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\",
+      "BasePath": "_content/TimeManagementPOE",
+      "RelativePath": "Resources/5856.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\5856.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\Resources\\elevated-view-laptop-stationeries-yellow-backdrop.jpg",
+      "SourceId": "TimeManagementPOE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\",
+      "BasePath": "_content/TimeManagementPOE",
+      "RelativePath": "Resources/elevated-view-laptop-stationeries-yellow-backdrop.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\elevated-view-laptop-stationeries-yellow-backdrop.jpg"
     }
   ]
 }

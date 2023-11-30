@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\TimeManagementPOE.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\Resources\\5856.jpg",
+      "PackagePath": "staticwebassets\\Resources\\5856.jpg"
+    },
+    {
+      "Id": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\Resources\\elevated-view-laptop-stationeries-yellow-backdrop.jpg",
+      "PackagePath": "staticwebassets\\Resources\\elevated-view-laptop-stationeries-yellow-backdrop.jpg"
+    },
+    {
       "Id": "C:\\Users\\travi\\source\\repos\\TimeManagementPOE\\wwwroot\\css\\Theme.css",
       "PackagePath": "staticwebassets\\css\\Theme.css"
     },
