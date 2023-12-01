@@ -27,10 +27,12 @@ namespace TimeManagementPOE.Controllers
         // GET: Modules
         public async Task<IActionResult> Index()
         {
+            // Get the user ID of the currently logged-in user
             var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var currentLoggedInUser = await _context.Modules.Where(m => m.UserId == userid).ToListAsync();
-
-            return View(currentLoggedInUser);
+            // Retrieve modules for the current user
+            var currentUser = await _context.Modules.Where(m => m.UserId == userid).ToListAsync();
+            // Return the view with the list of modules for the current user
+            return View(currentUser);
         }
             // GET: Modules/Details/5
             public async Task<IActionResult> Details(int? id)
@@ -65,7 +67,7 @@ namespace TimeManagementPOE.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                //add the user id to the database
                 modules.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 // Calculate remaining study hours
                 double remainingStudyHours = Part2StudyHours.Class1.WeeklyStudyHours(modules.Credits, 10, modules.ClassHours);

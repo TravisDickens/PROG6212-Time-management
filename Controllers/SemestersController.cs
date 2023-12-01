@@ -17,22 +17,28 @@ namespace TimeManagementPOE.Controllers
         private readonly ApplicationDbContext _context;
 
         private readonly IWebHostEnvironment _webHostEnvironment;
-
+        //declares a private readonly field of INotyfService
         private readonly INotyfService _notyf;
 
         public SemestersController(ApplicationDbContext context, INotyfService notyf)
         {
             _context = context;
+            //makes sure Inotyf is not null
             _notyf = notyf ?? throw new ArgumentNullException(nameof(notyf));
         }
 
         // GET: Semesters
         public async Task<IActionResult> Index()
         {
+            // Retrieve the user ID of the currently logged-in user
             var userid = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var currentLoggedInUser = await _context.Semesters.Where(s => s.UserId == userid).ToListAsync();
+            // Fetch a list of semesters associated with the user ID from the database
+            var currentUser = await _context.Semesters
+                                      .Where(s => s.UserId == userid) // Filter semesters based on user ID
+                                      .ToListAsync();//Convert the result to a list asynchronously
 
-            return View(currentLoggedInUser);
+
+            return View(currentUser);
         }
 
         // GET: Semesters/Details/5
@@ -68,15 +74,19 @@ namespace TimeManagementPOE.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Retrieve the user ID of the currently logged-in user
                 semesters.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 _context.Add(semesters);
                 await _context.SaveChangesAsync();
+                // Check if the notification service is available
                 if (_notyf != null)
                 {
+                    // Display success messages using the notification service
                     _notyf.Success("Semester successfully added");
                     _notyf.Success("You may now add modules");
                 }
+                // Redirect to the Index action of the SemestersController
                 return RedirectToAction(nameof(Index));
             }
             return View(semesters);

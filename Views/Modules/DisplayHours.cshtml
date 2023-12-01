@@ -2,11 +2,13 @@
 @model TimeManagementPOE.Controllers.ModuleViewModel
 
 @{
+    // Set the title of the view
     ViewData["Title"] = "Remaining Study Hours";
 }
 
 @section Scripts {
     @{
+        // Render partial validation scripts asynchronously
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -17,8 +19,11 @@
 
         // Show the SweetAlert automatically
         swal({
+            // Set the title of the SweetAlert
             title: "Remaining Study Hours",
+            // Display the text with the remaining study hours and module name
             text: "Remaining study hours for @Model.Module.Name: " + remainingStudyHours,
+            // Set the icon for the SweetAlert
             icon: "info"
         });
     </script>

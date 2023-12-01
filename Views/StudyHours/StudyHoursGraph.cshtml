@@ -1,17 +1,20 @@
 ﻿@model List<StudyHours>
 
 <div>
-    <h2>Study Hours </h2>
+    <h2 class="text-center">Study Hours </h2>
+    <!-- Canvas to render the chart -->
     <canvas id="studyHoursChart" width="600" height="250"></canvas>
-
+    <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve study hours data from the model
             var studyHoursData = @Html.Raw(Json.Serialize(Model));
-
+            // Extract unique module names and weeks
             var moduleNames = Array.from(new Set(studyHoursData.map(item => item.module.name)));
+            // Create datasets for each module
             var weeks = Array.from(new Set(studyHoursData.map(item => item.weekNumber)));
-
+            // Calculate total hours for each week for the current module
             var datasets = moduleNames.map(function (moduleName) {
                 var data = weeks.map(function (week) {
                     var hours = studyHoursData
@@ -27,8 +30,9 @@
                     borderWidth: 1
                 };
             });
-
+            // Get the rendering context of the canvas
             var ctx = document.getElementById('studyHoursChart').getContext('2d');
+            // Create a bar chart
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -50,13 +54,13 @@
                         },
                         title: {
                             display: true,
-                            text: 'Hours Studied',
+                            text: 'Hours',
                             position: 'left'
                         }
                     }
                 }
             });
-
+            // Function to generate a random color
             function getRandomColor() {
                 var letters = '0123456789ABCDEF';
                 var color = '#';
